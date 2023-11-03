@@ -1,0 +1,15 @@
+{
+    "schemaVersion": "2.2",
+    "description": "Lynis Audit",
+    "mainSteps": [
+      {
+        "action": "aws:runShellScript",
+        "name": "runShellScript",
+        "inputs": {
+          "runCommand": [
+            "sudo lynis --logfile \"/Audit_Reports/$(ec2-metadata -i | cut -d ' ' -f 2)/$(date +'%Y-%m-%d_%H-%M-%S')\" audit system"
+          ]
+        }
+      }
+    ]
+  }

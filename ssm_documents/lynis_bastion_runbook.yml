@@ -1,0 +1,10 @@
+description: ''
+schemaVersion: '0.3'
+parameters:
+  InstanceIds:
+    type: StringList
+mainSteps:
+  - name: lynix_bastion_step1
+    action: 'aws:runCommand'
+    inputs:
+      DocumentName: bastionlynisaudit
