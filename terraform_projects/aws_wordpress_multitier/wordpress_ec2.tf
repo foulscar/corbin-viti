@@ -26,7 +26,7 @@ resource "aws_security_group" "allow_web" {
 
 # Associate the security group with the EC2 instance
 resource "aws_instance" "wordpress_instance" {
-  ami           = "ami-0e8a34246278c21e4" # Replace with the correct AMI for your region
+  ami           = "ami-0e8a34246278c21e4"
   instance_type = "t2.micro"     # This is a free-tier eligible instance type
   user_data     = data.template_file.user_data.rendered
   subnet_id     = "subnet-026c82c6a8b95d448"
